@@ -2,8 +2,8 @@
   "applicationId": null,
   "awsProfileName": "",
   "skillName": "My Alexa Skill",
-  "lambdaName": "MyAlexaSkillLambdaFunction",
-  "dynamoTableName": "MyAlexaSkillTable",
+  "lambdaName": "ryanhackhathon",
+  "dynamoTableName": "ryanhackathon",
   "dynamoRegion": "us-east-1",
   "commands": {
     "ResetStateIntent": [
