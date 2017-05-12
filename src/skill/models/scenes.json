@@ -14,7 +14,8 @@
       }
     },
     "voice": {
-      "intro": "Welcome to my Alexa Skill. To learn how to use this skill, say \"Help\".",
+      "intro": "Welcome to your podventure! Say begin.",
+      "mp3file": "",
       "prompt": "When you are ready, say \"Begin\"."
     },
     "options": [
@@ -32,8 +33,8 @@
     "isHidden": false,
     "readPreviousOptions": false,
     "card": {
-      "title": "Welcome",
-      "text": "You enter a room with three doors each with a distinct number on it. Which door would you like to open?",
+      "title": "Something here",
+      "text": "You're listening to 99pi okay? <a href=\"prx.org\">prx.org</a>",
       "prompt": "",
       "image": {
         "largeImageUrl": null,
@@ -41,141 +42,66 @@
       }
     },
     "voice": {
-      "intro": "You enter a room with three doors, each with a distinct number on it. Which door would you like to open?",
-      "prompt": ""
+      "intro": "Something blah blah blah",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/99short.mp3",
+      "prompt": "and this is the prompt"
     },
     "options": [
       {
+        "sceneId": 2,
         "utterances": [
-          "open door 1"
-        ],
-        "sceneId": 2
+          "open door"
+        ]
       },
       {
+        "sceneId": 3,
         "utterances": [
-          "open door 2"
-        ],
-        "sceneId": 3
-      },
-      {
-        "utterances": [
-          "open door 3"
-        ],
-        "sceneId": 4
-      },
-      {
-        "utterances": [
-          "open door 4"
-        ],
-        "sceneId": 5
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "color": "red",
-    "isHidden": false,
-    "readPreviousOptions": false,
-    "card": {
-      "title": "You lose",
-      "text": "Better luck next time.",
-      "prompt": "If you would like to play again say, \"start again.\" Otherwise you can say \"exit skill.\"",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "You lose. Better luck next time.",
-      "prompt": "If you would like to play again say, \"start again.\" Otherwise you can say \"exit skill.\""
-    },
-    "options": []
-  },
-  {
-    "id": 3,
-    "color": "yellow",
-    "isHidden": false,
-    "readPreviousOptions": true,
-    "card": {
-      "title": "Locked Door",
-      "text": "This door is locked.",
-      "prompt": "",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "This door is locked. Maybe you should try one of the other doors.",
-      "prompt": ""
-    },
-    "options": []
-  },
-  {
-    "id": 4,
-    "color": "green",
-    "isHidden": false,
-    "readPreviousOptions": false,
-    "card": {
-      "title": "You win",
-      "text": "Congratulations, you've beat my skill!",
-      "prompt": "If you would like to play again say, \"Start again.\" Otherwise you can say \"Exit skill.\"",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "Congratulations, you've beat my skill!",
-      "prompt": "If you would like to play again say, \"Start again.\" Otherwise you can say \"Exit skill.\""
-    },
-    "options": []
-  },
-  {
-    "id": 5,
-    "color": "default",
-    "isHidden": true,
-    "readPreviousOptions": false,
-    "card": {
-      "title": "Secret Room",
-      "text": "Congratulations, you've found a secret room. You look around and see a single door with a star on it.",
-      "prompt": "",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "Congratulations, you've found a secret room. You look around and see a single door with a star on it.",
-      "prompt": ""
-    },
-    "options": [
-      {
-        "sceneId": 6,
-        "utterances": [
-          "open door 5"
+          "close door"
         ]
       }
     ]
   },
   {
-    "id": 6,
+    "id": 2,
     "color": "default",
     "isHidden": false,
     "generateOptions": true,
     "readPreviousOptions": false,
     "card": {
       "title": "Room",
-      "text": "You win!",
-      "prompt": "If you would like to play again say, \"Start again.\" Otherwise you can say \"Exit skill.\"",
+      "text": "You enter a room.",
+      "prompt": "",
       "image": {
         "largeImageUrl": null,
         "smallImageUrl": null
       }
     },
     "voice": {
-      "intro": "You win!",
-      "prompt": "If you would like to play again say, \"Start again.\" Otherwise you can say \"Exit skill.\""
+      "intro": "You enter a room. What would you like to do?",
+      "mp3file": "",
+      "prompt": ""
+    },
+    "options": []
+  },
+  {
+    "id": 3,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Room",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "You're done here.",
+      "mp3file": "",
+      "prompt": "Goodbye"
     },
     "options": []
   }

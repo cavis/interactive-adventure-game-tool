@@ -40,6 +40,8 @@ var eventHandlers = {
     && intentName !== "AMAZON.HelpIntent"
     && intentName !== "AMAZON.StopIntent"
     && intentName !== "AMAZON.CancelIntent"
+    && intentName !== "AMAZON.PauseIntent"
+    && intentName !== "AMAZON.ResumeIntent"
     && intentName !== "ResetStateIntent"
     && intentName !== "RepeatSceneIntent"
     && intentName !== "RepeatOptionsIntent"

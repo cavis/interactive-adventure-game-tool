@@ -274,6 +274,16 @@
     </div>
 
     <div class="input-row">
+      <label for="$mp3file">
+        Mp3 File
+      </label>
+      <autogrow-textarea
+        id="$mp3file"
+        onblur={ save }
+        value={ scene.voice.mp3file }></autogrow-textarea>
+    </div>
+
+    <div class="input-row">
       <label for="$voicePrompt">
         Override Default Prompt
         <small>(Optional)</small>
@@ -398,6 +408,7 @@
 
       this.scene.voice = {
         intro: this.$intro.value.trim(),
+        mp3file: this.$mp3file.value.trim(),
         prompt: this.$voicePrompt.value.trim()
       }
 

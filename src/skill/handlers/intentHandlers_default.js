@@ -51,6 +51,7 @@ var defaultIntentHandlers = {
       scene = utils.findResponseBySceneId( session.attributes.currentSceneId )
     }
     scene.voice.intro = ''
+    scene.voice.mp3file = ''
     scene.card.text = ''
     respond.readSceneWithCard( scene, session, response )
   },
@@ -103,6 +104,15 @@ var defaultIntentHandlers = {
   "AMAZON.StopIntent": function ( intent, session, request, response ) {
     var exit = utils.findResponseByType('exit')
     respond.exitWithCard( exit, session, response )
+  },
+
+  "AMAZON.PauseIntent": function ( intent, session, request, response ) {
+    console.log('pause!!!')
+  },
+
+
+  "AMAZON.ResumeIntent": function ( intent, session, request, response ) {
+    console.log('resume!!!')
   }
 
 }

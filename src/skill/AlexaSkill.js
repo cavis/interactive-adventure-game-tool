@@ -28,6 +28,26 @@ AlexaSkill.prototype.requestHandlers = {
     this.eventHandlers.onIntent.call( this, event.request, event.session, response)
   },
 
+  'AudioPlayer.PlaybackStarted': function ( event, context, response ) {
+
+  },
+
+  'AudioPlayer.PlaybackFinished': function ( event, context, response ) {
+
+  },
+
+  'AudioPlayer.PlaybackStopped': function ( event, context, response ) {
+
+  },
+
+  'AudioPlayer.PlaybackNearlyFinished': function ( event, context, response ) {
+
+  },
+
+  'AudioPlayer.PlaybackFailed': function ( event, context, response ) {
+
+  },
+
   SessionEndedRequest: function ( event, context ) {
     this.eventHandlers.onSessionEnded( event.request, event.session )
     context.succeed()
@@ -107,98 +127,57 @@ function createSpeechObject( optionsParam ) {
 Response.prototype = (function () {
 
   return {
-    play: function ( url ) {
-      this._context.succeed( buildPlaybackResponse({
-        session: this._session,
-        url: url,
-        shouldEndSession: true
-      }))
-    },
-    tell: function ( speechOutput ) {
+    tell: function ( speechOutput, audioOutput ) {
       this._context.succeed( buildSpeechletResponse({
         session: this._session,
         output: speechOutput,
+        audio: audioOutput,
         shouldEndSession: true
       }))
     },
-    tellWithCard: function ( speechOutput, cardTitle, cardContent, cardImage ) {
+    tellWithCard: function ( speechOutput, audioOutput, cardTitle, cardContent, cardImage ) {
       this._context.succeed( buildSpeechletResponse({
         session: this._session,
         output: speechOutput,
+        audio: audioOutput,
         cardTitle: cardTitle,
         cardContent: cardContent,
         cardImage: cardImage,
         shouldEndSession: true
       }))
     },
-    ask: function ( speechOutput, repromptSpeech ) {
+    ask: function ( speechOutput, audioOutput, repromptSpeech ) {
       this._context.succeed( buildSpeechletResponse({
         session: this._session,
         output: speechOutput,
+        audio: audioOutput,
         reprompt: repromptSpeech,
         shouldEndSession: false
       }))
     },
-    askWithCard: function ( speechOutput, repromptSpeech, cardTitle, cardContent, cardImage ) {
+    askWithCard: function ( speechOutput, audioOutput, repromptSpeech, cardTitle, cardContent, cardImage ) {
       this._context.succeed( buildSpeechletResponse({
         session: this._session,
         output: speechOutput,
+        audio: audioOutput,
         reprompt: repromptSpeech,
         cardTitle: cardTitle,
         cardContent: cardContent,
         cardImage: cardImage,
         shouldEndSession: false
       }))
-    }
-  }
-
-  function buildPlaybackResponse ( options ) {
-
-    console.log('buildPlaybackResponse', options);
-
-    var alexaResponse = {
-      shouldEndSession: true,
-      directives: [{
-        type: "AudioPlayer.Play",
-        playBehavior: "REPLACE_ALL",
-        audioItem: {
-          stream: {
-            url: options.url,
-            token: "0", // Unique token for the track - needed when queueing multiple tracks
-            expectedPreviousToken: null, // The expected previous token - when using queues, ensures safety
-            offsetInMilliseconds: 0
-          }
+    },
+    stop: function () {
+      this._context.succeed({
+        version: "1.0",
+        response: {
+          shouldEndSession: true,
+          directives: [{
+            type: "AudioPlayer.Stop"
+          }]
         }
-      }]
-    };
-
-    if ( options.reprompt ) {
-      alexaResponse.reprompt = {
-        outputSpeech: createSpeechObject( options.reprompt )
-      }
+      });
     }
-    if ( options.cardTitle && options.cardContent ) {
-      var type = "Standard"
-      alexaResponse.card = {
-        type: type,
-        title: options.cardTitle,
-        text: options.cardContent
-      }
-      if ( options.cardImage ) {
-        alexaResponse.card.image = options.cardImage
-      }
-    }
-
-    var returnResult = {
-      version: '1.0',
-      response: alexaResponse
-    }
-
-    if ( options.session && options.session.attributes ) {
-      returnResult.sessionAttributes = options.session.attributes
-    }
-
-    return returnResult
   }
 
   function buildSpeechletResponse ( options ) {
@@ -223,6 +202,21 @@ Response.prototype = (function () {
       if ( options.cardImage ) {
         alexaResponse.card.image = options.cardImage
       }
+    }
+    if ( options.audio ) {
+      alexaResponse.directives = [{
+        type: "AudioPlayer.Play",
+        playBehavior: "REPLACE_ALL",
+        audioItem: {
+          stream: {
+            url: options.audio,
+            token: "0", // Unique token for the track - needed when queueing multiple tracks
+            expectedPreviousToken: null, // The expected previous token - when using queues, ensures safety
+            offsetInMilliseconds: 0
+          }
+        }
+      }];
+      alexaResponse.shouldEndSession = true; // MUST be true
     }
 
     var returnResult = {
