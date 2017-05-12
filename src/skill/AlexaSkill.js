@@ -107,6 +107,13 @@ function createSpeechObject( optionsParam ) {
 Response.prototype = (function () {
 
   return {
+    play: function ( url ) {
+      this._context.succeed( buildPlaybackResponse({
+        session: this._session,
+        url: url,
+        shouldEndSession: true
+      }))
+    },
     tell: function ( speechOutput ) {
       this._context.succeed( buildSpeechletResponse({
         session: this._session,
@@ -143,6 +150,55 @@ Response.prototype = (function () {
         shouldEndSession: false
       }))
     }
+  }
+
+  function buildPlaybackResponse ( options ) {
+
+    console.log('buildPlaybackResponse', options);
+
+    var alexaResponse = {
+      shouldEndSession: true,
+      directives: [{
+        type: "AudioPlayer.Play",
+        playBehavior: "REPLACE_ALL",
+        audioItem: {
+          stream: {
+            url: options.url,
+            token: "0", // Unique token for the track - needed when queueing multiple tracks
+            expectedPreviousToken: null, // The expected previous token - when using queues, ensures safety
+            offsetInMilliseconds: 0
+          }
+        }
+      }]
+    };
+
+    if ( options.reprompt ) {
+      alexaResponse.reprompt = {
+        outputSpeech: createSpeechObject( options.reprompt )
+      }
+    }
+    if ( options.cardTitle && options.cardContent ) {
+      var type = "Standard"
+      alexaResponse.card = {
+        type: type,
+        title: options.cardTitle,
+        text: options.cardContent
+      }
+      if ( options.cardImage ) {
+        alexaResponse.card.image = options.cardImage
+      }
+    }
+
+    var returnResult = {
+      version: '1.0',
+      response: alexaResponse
+    }
+
+    if ( options.session && options.session.attributes ) {
+      returnResult.sessionAttributes = options.session.attributes
+    }
+
+    return returnResult
   }
 
   function buildSpeechletResponse ( options ) {
