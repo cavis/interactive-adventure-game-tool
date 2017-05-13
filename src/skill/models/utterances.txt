@@ -26,8 +26,14 @@ StayInSquareIntent stay
 GoOnCampusIntent go on campus
 GoOnCampusIntent go to campus
 GoOnCampusIntent campus
-StatueIntent statue
-StatueIntent yes
-StatueIntent go to statue
-StatueIntent look at statue
-StatueIntent let's go
+WesleyIntent Wesley
+JonathanIntent Jonathan
+LongIslandIntent long island
+SouthernIntent Southern
+SouthernIntent Southern Family
+BarIntent bar
+BookstoreIntent bookstore
+VisitorsIntent visitors
+FacultyIntent faculty
+FacultyIntent academics
+FacultyIntent professors

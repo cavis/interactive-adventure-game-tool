@@ -43,7 +43,28 @@
       "intent": "GoOnCampusIntent"
     },
     {
-      "intent": "StatueIntent"
+      "intent": "WesleyIntent"
+    },
+    {
+      "intent": "JonathanIntent"
+    },
+    {
+      "intent": "LongIslandIntent"
+    },
+    {
+      "intent": "SouthernIntent"
+    },
+    {
+      "intent": "BarIntent"
+    },
+    {
+      "intent": "BookstoreIntent"
+    },
+    {
+      "intent": "VisitorsIntent"
+    },
+    {
+      "intent": "FacultyIntent"
     }
   ]
 }

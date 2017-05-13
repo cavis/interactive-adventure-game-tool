@@ -15,7 +15,7 @@
     },
     "voice": {
       "intro": "",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/05-99-Percent-Forgotten.mp3",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/MainINTRO-harvardsq-tstop.mp3",
       "prompt": "Would you like some historical background about Cambridge, would you like to explore Harvard Square, or should we head to campus?"
     },
     "options": [
@@ -61,13 +61,48 @@
     },
     "voice": {
       "intro": "Good choice. There is so much more to learn.",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
+      "mp3file": "",
       "prompt": "That's it."
     },
     "options": []
   },
   {
     "id": 2,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Bar Options",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "Would you like to hear from Jonathan or Wesley?",
+      "mp3file": "",
+      "prompt": ""
+    },
+    "options": [
+      {
+        "sceneId": 8,
+        "utterances": [
+          "Wesley"
+        ]
+      },
+      {
+        "sceneId": 11,
+        "utterances": [
+          "Jonathan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
     "color": "default",
     "isHidden": false,
     "generateOptions": true,
@@ -82,9 +117,45 @@
       }
     },
     "voice": {
-      "intro": "Let's learn more about the John Harvard statue.",
+      "intro": "There are always visitors gathered around the John Harvard Statue. Let's learn more about it.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardstatueUPDATED.mp3",
-      "prompt": "We've seen everything here. Would you like to go back, or exit?"
+      "prompt": "There are so many visitors! Would you like to hear from a Southern family or a family from Long Island?"
+    },
+    "options": [
+      {
+        "sceneId": 4,
+        "utterances": [
+          "long island"
+        ]
+      },
+      {
+        "sceneId": 10,
+        "utterances": [
+          "Southern",
+          "Southern Family"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Long Island Family",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
+      "prompt": ""
     },
     "options": []
   },
@@ -104,11 +175,24 @@
       }
     },
     "voice": {
-      "intro": "Welcome to Harvard Square.",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
-      "prompt": "That's it"
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/inthesquare.mp3",
+      "prompt": "Would you like to go to the bar or the bookstore?"
     },
-    "options": []
+    "options": [
+      {
+        "sceneId": 2,
+        "utterances": [
+          "bar"
+        ]
+      },
+      {
+        "sceneId": 7,
+        "utterances": [
+          "bookstore"
+        ]
+      }
+    ]
   },
   {
     "id": 6,
@@ -126,21 +210,135 @@
       }
     },
     "voice": {
-      "intro": "We're on Harvard's campus, but let's hear from someone who has a few years before entering college.",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
-      "prompt": "There's always a big crowd around the John Harvard statue. Would you like to check it out?"
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/on-campus.mp3",
+      "prompt": "Would you like to hear from Harvard faculty or visitors to campus?"
     },
     "options": [
       {
-        "sceneId": 2,
+        "sceneId": 3,
         "utterances": [
-          "statue",
-          "yes",
-          "go to statue",
-          "look at statue",
-          "let's go"
+          "visitors"
+        ]
+      },
+      {
+        "sceneId": 9,
+        "utterances": [
+          "faculty",
+          "academics",
+          "professors"
         ]
       }
     ]
+  },
+  {
+    "id": 7,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Bookstore",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
+      "prompt": ""
+    },
+    "options": []
+  },
+  {
+    "id": 8,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Wesley",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-wesley.mp3",
+      "prompt": ""
+    },
+    "options": []
+  },
+  {
+    "id": 9,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Faculty",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/hbs-dave-theresa.mp3",
+      "prompt": ""
+    },
+    "options": []
+  },
+  {
+    "id": 10,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Southern Family",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-southernfamily.mp3",
+      "prompt": ""
+    },
+    "options": []
+  },
+  {
+    "id": 11,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Jonathan",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
+      "prompt": ""
+    },
+    "options": []
   }
 ]
