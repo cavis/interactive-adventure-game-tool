@@ -14,7 +14,7 @@
       }
     },
     "voice": {
-      "intro": "Welcome to your podventure! Say begin.",
+      "intro": "Welcome to your podventure!",
       "mp3file": "",
       "prompt": "When you are ready, say \"Begin\"."
     },
@@ -44,7 +44,7 @@
     "voice": {
       "intro": "Something blah blah blah",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/99short.mp3",
-      "prompt": "and this is the prompt"
+      "prompt": "ssshhhhhh"
     },
     "options": [
       {
