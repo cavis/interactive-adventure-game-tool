@@ -8,10 +8,13 @@ gulp.task('serve', function () {
 
   gulp.watch([
     'src/*.html',
-    'src/scripts/**/*.js',
-    'src/tags/js/**/*.js',
+    'src/**/*.js',
+    // 'src/scripts/**/*.js',
+    // 'src/tags/js/**/*.js',
     // 'src/skill/models/config.json',
     // 'src/skill/models/scenes.json'
+    // 'src/AlexaSkill.js',
+    // 'src/handlers/**/*.js',
   ]).on('change', browserSync.reload )
   gulp.watch('src/tags/**/*.tag',['tags'])
   gulp.watch('src/styles/**/*.scss',['styles'])
