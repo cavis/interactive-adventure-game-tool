@@ -20,6 +20,21 @@ module.exports = {
     })
   },
 
+  playSceneWithCardAt: function ( offsetMs, scene, session, response ) {
+    var json = buildResponse( scene )
+
+    dynamo.putUserState( session, function ( data ) {
+      response.askWithCard(
+        json.speechOutput,
+        json.audioOutput,
+        json.repromptOutput,
+        json.cardTitle,
+        json.cardOutput,
+        json.cardImage
+      )
+    })
+  },
+
   promptSceneWithCard: function ( scene, session, response ) {
     var json = buildResponsePrompt( scene )
 
@@ -71,10 +86,15 @@ function buildResponse ( scene ){
       ssml: `<speak>${scene.voice.intro.trim()}<break time="200ms"/>${voicePrompt}</speak>`
     };
   }
-  else {
+  else if (voicePrompt !== 'none') {
     speech = {
       type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
       ssml: `<speak>${voicePrompt}</speak>`
+    };
+  } else {
+    speech = {
+      type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
+      ssml: `<speak></speak>`
     };
   }
 

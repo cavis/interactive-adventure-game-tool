@@ -31,6 +31,20 @@ var eventHandlers = {
 
   },
 
+  onPlaybackStopped: function ( offsetMs, session, context ) {
+    console.log('getting user state', JSON.stringify(session))
+    dynamo.getUserState( session, function ( data ) {
+      session.attributes = session.attributes || {};
+      Object.assign( session.attributes, data.item )
+      session.attributes.offsetMs = offsetMs;
+      console.log('saving state:', JSON.stringify(session.attributes));
+      dynamo.putUserState(session, function( data ) {
+        console.log('saved state!');
+        context.succeed({version: '1.0', response: {shouldEndSession: true}});
+      });
+    });
+  },
+
   onAudioFinish: function ( request, session, response ) {
     dynamo.getUserState( session, function ( data ) {
       session.attributes = {};

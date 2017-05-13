@@ -108,14 +108,21 @@ var defaultIntentHandlers = {
   },
 
   "AMAZON.PauseIntent": function ( intent, session, request, response ) {
-    console.log('PauseIntent', JSON.stringify(session));
-    var exit = utils.findResponseByType('pause')
-    respond.exitWithCard( exit, session, response )
+    console.log('PauseIntent', JSON.stringify(request));
+    response.stop()
   },
 
   "AMAZON.ResumeIntent": function ( intent, session, request, response ) {
-    console.log('ResumeIntent', JSON.stringify(session));
-    console.log('resume!!!')
+    if ( !session.attributes.currentSceneId ) {
+      dynamo.getUserState( session, function ( data ) {
+        session.attributes = {};
+        Object.assign( session.attributes, data.item )
+        var scene = utils.findResponseBySceneId( session.attributes.currentSceneId )
+        response.playSceneAt( session.attributes.offsetMs, scene )
+      });
+    } else {
+      defaultIntentHandlers["RepeatOptionsIntent"](intent, session, request, response);
+    }
   },
 
   "AMAZON.NextIntent": function ( intent, session, request, response ) {

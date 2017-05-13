@@ -111,25 +111,6 @@
         "intro": "Thank you for using My Alexa Skill.",
         "prompt": "Goodbye."
       }
-    },
-    "pause": {
-      "color": "default",
-      "isHidden": false,
-      "generateOptions": false,
-      "readPreviousOptions": false,
-      "card": {
-        "title": "Paused",
-        "text": "Pausing podventure",
-        "prompt": "",
-        "image": {
-          "largeImageUrl": null,
-          "smallImageUrl": null
-        }
-      },
-      "voice": {
-        "intro": "Pausing podventure",
-        "prompt": "Say resume to continue"
-      }
     }
   },
   "undefined": "My Alexa Skill"

@@ -31,13 +31,13 @@
       "intent": "BeginIntent"
     },
     {
-      "intent": "LeftIntent"
+      "intent": "MoreBackgroundIntent"
     },
     {
-      "intent": "RightIntent"
+      "intent": "StayInSquareIntent"
     },
     {
-      "intent": "FarewellIntent"
+      "intent": "GoOnCampusIntent"
     }
   ]
 }

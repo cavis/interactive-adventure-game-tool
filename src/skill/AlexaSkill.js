@@ -41,7 +41,7 @@ AlexaSkill.prototype.requestHandlers = {
 
   'AudioPlayer.PlaybackStopped': function ( event, context, response ) {
     console.log('EVENT me playbackstopped', JSON.stringify(event.context));
-    context.succeed({version: '1.0', response: {shouldEndSession: true}});
+    this.eventHandlers.onPlaybackStopped.call( this, event.context.AudioPlayer.offsetInMilliseconds, event.context.System, context)
   },
 
   'AudioPlayer.PlaybackNearlyFinished': function ( event, context, response ) {

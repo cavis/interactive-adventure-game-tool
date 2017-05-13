@@ -28,13 +28,13 @@ module.exports = {
 	"BeginIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "begin" )
 	},
-	"LeftIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "left" )
+	"MoreBackgroundIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "more background" )
 	},
-	"RightIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "right" )
+	"StayInSquareIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "stay in square" )
 	},
-	"FarewellIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "farewell" )
+	"GoOnCampusIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "go on campus" )
 	},
 }

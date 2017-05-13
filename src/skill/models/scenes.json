@@ -33,8 +33,8 @@
     "isHidden": false,
     "readPreviousOptions": false,
     "card": {
-      "title": "Something here",
-      "text": "You're listening to 99pi okay?",
+      "title": "Train station",
+      "text": "",
       "prompt": "",
       "image": {
         "largeImageUrl": null,
@@ -42,21 +42,32 @@
       }
     },
     "voice": {
-      "intro": "Going to play a file",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/99short.mp3",
-      "prompt": ""
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-wesley.mp3",
+      "prompt": "none"
     },
     "options": [
       {
         "sceneId": 2,
         "utterances": [
-          "left"
+          "more background",
+          "background",
+          "more"
         ]
       },
       {
         "sceneId": 3,
         "utterances": [
-          "right"
+          "stay in square",
+          "square"
+        ]
+      },
+      {
+        "sceneId": 4,
+        "utterances": [
+          "go on campus",
+          "campus",
+          "go to campus"
         ]
       }
     ]
@@ -68,7 +79,7 @@
     "generateOptions": true,
     "readPreviousOptions": false,
     "card": {
-      "title": "Room",
+      "title": "Background",
       "text": "You enter a room.",
       "prompt": "",
       "image": {
@@ -77,18 +88,11 @@
       }
     },
     "voice": {
-      "intro": "You went left.  Okay.",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/99short.mp3",
-      "prompt": "Say farewell"
+      "intro": "It's never enough for you, huh?",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
+      "prompt": ""
     },
-    "options": [
-      {
-        "sceneId": 4,
-        "utterances": [
-          "farewell"
-        ]
-      }
-    ]
+    "options": []
   },
   {
     "id": 3,
@@ -97,8 +101,8 @@
     "generateOptions": true,
     "readPreviousOptions": false,
     "card": {
-      "title": "Room",
-      "text": "You went right. Bye.",
+      "title": "Square",
+      "text": "You enter a room.",
       "prompt": "",
       "image": {
         "largeImageUrl": null,
@@ -106,8 +110,8 @@
       }
     },
     "voice": {
-      "intro": "You're done here.",
-      "mp3file": "",
+      "intro": "Let's go to the square",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
       "prompt": "Goodbye"
     },
     "options": []
@@ -119,7 +123,7 @@
     "generateOptions": true,
     "readPreviousOptions": false,
     "card": {
-      "title": "Room",
+      "title": "Campus",
       "text": "You enter a room.",
       "prompt": "",
       "image": {
@@ -128,8 +132,8 @@
       }
     },
     "voice": {
-      "intro": "That's it. Bye.",
-      "mp3file": "",
+      "intro": "Off to campus",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
       "prompt": ""
     },
     "options": []

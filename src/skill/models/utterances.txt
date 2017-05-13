@@ -16,6 +16,11 @@ AMAZON.HelpIntent help
 AMAZON.StopIntent exit skill
 AMAZON.CancelIntent exit skill
 BeginIntent begin
-LeftIntent left
-RightIntent right
-FarewellIntent farewell
+MoreBackgroundIntent more background
+MoreBackgroundIntent background
+MoreBackgroundIntent more
+StayInSquareIntent stay in square
+StayInSquareIntent square
+GoOnCampusIntent go on campus
+GoOnCampusIntent campus
+GoOnCampusIntent go to campus
