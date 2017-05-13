@@ -26,14 +26,6 @@ StayInSquareIntent stay
 GoOnCampusIntent go on campus
 GoOnCampusIntent go to campus
 GoOnCampusIntent campus
-GoBackIntent go back
-GoBackIntent back
-MoreBackgroundIntent more background
-MoreBackgroundIntent background
-MoreBackgroundIntent more
-StayInSquareIntent stay in square
-StayInSquareIntent stay
-StayInSquareIntent square
 StatueIntent statue
 StatueIntent go to statue
 StatueIntent look at statue

@@ -16,7 +16,7 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/05-99-Percent-Forgotten.mp3",
-      "prompt": "Where to? More background, stay in square, or go to campus?"
+      "prompt": "Would you like some historical background about Cambridge, would you like to explore Harvard Square, or should we head to campus?"
     },
     "options": [
       {
@@ -86,75 +86,6 @@
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardstatueUPDATED.mp3",
       "prompt": "We've seen everything here. Would you like to go back, or exit?"
     },
-    "options": [
-      {
-        "sceneId": 3,
-        "utterances": [
-          "go back",
-          "back"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "color": "default",
-    "isHidden": false,
-    "generateOptions": true,
-    "readPreviousOptions": false,
-    "card": {
-      "title": "Back to start",
-      "text": "You enter a room.",
-      "prompt": "",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/05-99-Percent-Forgotten.mp3",
-      "prompt": "Where to? Would you like to learn more about the history of Cambridge or explore Harvard Square?"
-    },
-    "options": [
-      {
-        "sceneId": 4,
-        "utterances": [
-          "more background",
-          "background",
-          "more"
-        ]
-      },
-      {
-        "sceneId": 7,
-        "utterances": [
-          "stay in square",
-          "stay",
-          "square"
-        ]
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "color": "default",
-    "isHidden": false,
-    "generateOptions": true,
-    "readPreviousOptions": false,
-    "card": {
-      "title": "Background",
-      "text": "You enter a room.",
-      "prompt": "",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "There is so much to learn! Let's hear what's next.",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
-      "prompt": ""
-    },
     "options": []
   },
   {
@@ -195,7 +126,7 @@
       }
     },
     "voice": {
-      "intro": "We're here at Harvard, but let's hear from someone who has a few years before entering college.",
+      "intro": "We're on Harvard's campus, but let's hear from someone who has a few years before entering college.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
       "prompt": "There's always a big crowd around the John Harvard statue. Would you like to check it out?"
     },
@@ -210,27 +141,5 @@
         ]
       }
     ]
-  },
-  {
-    "id": 7,
-    "color": "default",
-    "isHidden": false,
-    "generateOptions": true,
-    "readPreviousOptions": false,
-    "card": {
-      "title": "Square",
-      "text": "You enter a room.",
-      "prompt": "",
-      "image": {
-        "largeImageUrl": null,
-        "smallImageUrl": null
-      }
-    },
-    "voice": {
-      "intro": "Here we are in Harvard Square.",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
-      "prompt": ""
-    },
-    "options": []
   }
 ]
