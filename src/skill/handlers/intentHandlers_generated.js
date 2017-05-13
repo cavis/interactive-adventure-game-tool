@@ -64,4 +64,7 @@ module.exports = {
 	"FacultyIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "faculty" )
 	},
+	"ContinueIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "Continue" )
+	},
 }

@@ -82,9 +82,9 @@
       }
     },
     "voice": {
-      "intro": "Would you like to hear from Jonathan or Wesley?",
-      "mp3file": "",
-      "prompt": ""
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/Bar-intro.mp3",
+      "prompt": "Would you like to hear from Jonathan or Wesley?"
     },
     "options": [
       {
@@ -238,7 +238,7 @@
     "generateOptions": true,
     "readPreviousOptions": false,
     "card": {
-      "title": "Bookstore",
+      "title": "Annie",
       "text": "You enter a room.",
       "prompt": "",
       "image": {
@@ -249,9 +249,16 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
-      "prompt": ""
+      "prompt": "Thanks, Annie. Let's hear more about the history of books in Harvard Square. Say continue."
     },
-    "options": []
+    "options": [
+      {
+        "sceneId": 12,
+        "utterances": [
+          "Continue"
+        ]
+      }
+    ]
   },
   {
     "id": 8,
@@ -337,6 +344,28 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
+      "prompt": ""
+    },
+    "options": []
+  },
+  {
+    "id": 12,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Book History",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardsqandbookstores.mp3",
       "prompt": ""
     },
     "options": []

@@ -37,3 +37,4 @@ VisitorsIntent visitors
 FacultyIntent faculty
 FacultyIntent academics
 FacultyIntent professors
+ContinueIntent Continue
