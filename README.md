@@ -1,4 +1,8 @@
-# Interactive Adventure Game Tool
+# Crosswalk
+
+This Alexa skill was a product of the [2017 PRX Audio For Good hackathon](https://www.audioforgood.com/). It's a choose your own adventure interactive audio experience about the history of Cambridge, past and present. Install instructions and more from the source repo below.
+
+## Interactive Adventure Game Tool
 
 This tool provides an easy to use front-end that allows developers to instantly deploy code for your story, or use the generated code as a starting point for more complex projects. It was written in Node.js by Thomas Yuill, a designer and engineer in the Amazon Advertising team.
 
@@ -18,24 +22,24 @@ Set these up with these step-by-step instructions:
 
 1. Create or login to an AWS account. In the AWS Console:
   1. Switch to the "N. Virginia" region, since Alexa Skills are currently only supported in that region.
-  
-     ![switch_region](https://cloud.githubusercontent.com/assets/1970771/17977067/034c82c2-6aa5-11e6-96be-a87d9832e123.png "AWS Switch Region Screenshot") 
-  
+
+     ![switch_region](https://cloud.githubusercontent.com/assets/1970771/17977067/034c82c2-6aa5-11e6-96be-a87d9832e123.png "AWS Switch Region Screenshot")
+
   1. Create an AWS Role in IAM with access to Lambda, CloudWatch Logs and DynamoDB.
-  
+
      ![create_role_1](https://cloud.githubusercontent.com/assets/7671574/17451098/09f64f40-5b19-11e6-82ee-b82c98387052.png "AWS Create Role Screenshot 1")
      ![create_role_2](https://cloud.githubusercontent.com/assets/7671574/17451100/0c3ef928-5b19-11e6-9aca-8cd353106396.png "AWS Create Role Screenshot 2")
      ![create_role_3](https://cloud.githubusercontent.com/assets/7671574/18011103/7b05f2b2-6b68-11e6-8dc3-3aa9ead6d83e.png "AWS Create Role Screenshot 3")
 
   1. Create an AWS Lambda function named MyAlexaSkillLambdaFunction being sure to select "Alexa Skills Kit" as the trigger and using the role created above.  Take note of the ARN on the upper right, which you'll configure in the Developer Console later.
-  
+
      ![alt text](https://cloud.githubusercontent.com/assets/7671574/17451088/ff126618-5b18-11e6-8f46-fbfb9461ab80.png "AWS Lambda Create Trigger Screenshot")
 
   1. Create an AWS DynamoDB table named MyAlexaSkillTable with the case sensitive primary key "userId".
 
      ![alt text](https://cloud.githubusercontent.com/assets/7671574/17307587/b80787f2-57ea-11e6-9be2-3df26e8e5947.png "AWS DynamoDB Screenshot")
 
-1. Create or login to an [Amazon Developer account](https://developer.amazon.com).  In the Developer Console: 
+1. Create or login to an [Amazon Developer account](https://developer.amazon.com).  In the Developer Console:
   1. [Create an Alexa Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function) named MySkill and using the invocation name "my skill" and using the ARN you noted above.
 
      ![alt text](https://cloud.githubusercontent.com/assets/7671574/17307653/13500166-57eb-11e6-844d-1083efa3dddb.png "Developer Portal Skill Information Screenshot")
