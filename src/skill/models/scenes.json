@@ -60,7 +60,7 @@
       }
     },
     "voice": {
-      "intro": "It's never enough, huh.",
+      "intro": "Good choice. There is so much more to learn.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
       "prompt": "That's it."
     },
@@ -82,7 +82,7 @@
       }
     },
     "voice": {
-      "intro": "What a great statue",
+      "intro": "Let's learn more about the John Harvard statue.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardstatueUPDATED.mp3",
       "prompt": "We've seen everything here. Would you like to go back, or exit?"
     },
@@ -114,7 +114,7 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/05-99-Percent-Forgotten.mp3",
-      "prompt": "Where to? More background, or stay in square?"
+      "prompt": "Where to? Would you like to learn more about the history of Cambridge or explore Harvard Square?"
     },
     "options": [
       {
@@ -151,7 +151,7 @@
       }
     },
     "voice": {
-      "intro": "It's never enough, huh?",
+      "intro": "There is so much to learn! Let's hear what's next.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
       "prompt": ""
     },
@@ -173,7 +173,7 @@
       }
     },
     "voice": {
-      "intro": "Welcome to Harvard Square",
+      "intro": "Welcome to Harvard Square.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
       "prompt": "That's it"
     },
@@ -195,9 +195,9 @@
       }
     },
     "voice": {
-      "intro": "Time to relive your college days.",
+      "intro": "We're here at Harvard, but let's hear from someone who has a few years before entering college.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
-      "prompt": "Want to go look at that neat statue?"
+      "prompt": "There's always a big crowd around the John Harvard statue. Would you like to check it out?"
     },
     "options": [
       {
@@ -227,7 +227,7 @@
       }
     },
     "voice": {
-      "intro": "You're staying in square",
+      "intro": "Here we are in Harvard Square.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
       "prompt": ""
     },
