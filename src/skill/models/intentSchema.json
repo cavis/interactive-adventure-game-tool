@@ -43,16 +43,16 @@
       "intent": "GoOnCampusIntent"
     },
     {
-      "intent": "WesleyIntent"
+      "intent": "PatronIntent"
     },
     {
-      "intent": "JonathanIntent"
+      "intent": "BartenderIntent"
     },
     {
       "intent": "LongIslandIntent"
     },
     {
-      "intent": "SouthernIntent"
+      "intent": "SouthIntent"
     },
     {
       "intent": "BarIntent"
@@ -67,7 +67,10 @@
       "intent": "FacultyIntent"
     },
     {
-      "intent": "ContinueIntent"
+      "intent": "HistoryIntent"
+    },
+    {
+      "intent": "BooksellerIntent"
     }
   ]
 }

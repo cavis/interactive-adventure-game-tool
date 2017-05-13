@@ -26,15 +26,19 @@ StayInSquareIntent stay
 GoOnCampusIntent go on campus
 GoOnCampusIntent go to campus
 GoOnCampusIntent campus
-WesleyIntent Wesley
-JonathanIntent Jonathan
+PatronIntent patron
+BartenderIntent bartender
 LongIslandIntent long island
-SouthernIntent Southern
-SouthernIntent Southern Family
+SouthIntent South
+SouthIntent Southern Family
+SouthIntent Southern
 BarIntent bar
 BookstoreIntent bookstore
 VisitorsIntent visitors
 FacultyIntent faculty
 FacultyIntent academics
 FacultyIntent professors
-ContinueIntent Continue
+HistoryIntent history
+HistoryIntent history of books
+HistoryIntent book history
+BooksellerIntent bookseller

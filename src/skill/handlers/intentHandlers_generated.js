@@ -40,17 +40,17 @@ module.exports = {
 	"GoOnCampusIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "go on campus" )
 	},
-	"WesleyIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "Wesley" )
+	"PatronIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "patron" )
 	},
-	"JonathanIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "Jonathan" )
+	"BartenderIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "bartender" )
 	},
 	"LongIslandIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "long island" )
 	},
-	"SouthernIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "Southern" )
+	"SouthIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "South" )
 	},
 	"BarIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "bar" )
@@ -64,7 +64,10 @@ module.exports = {
 	"FacultyIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "faculty" )
 	},
-	"ContinueIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "Continue" )
+	"HistoryIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "history" )
+	},
+	"BooksellerIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "bookseller" )
 	},
 }

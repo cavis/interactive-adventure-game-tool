@@ -61,7 +61,7 @@
     },
     "voice": {
       "intro": "Good choice. There is so much more to learn.",
-      "mp3file": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/MOREBACKGROUND.mp3",
       "prompt": "That's it."
     },
     "options": []
@@ -84,19 +84,19 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/Bar-intro.mp3",
-      "prompt": "Would you like to hear from Jonathan or Wesley?"
+      "prompt": "Would you like to hear from the bartender or the patron?"
     },
     "options": [
       {
         "sceneId": 8,
         "utterances": [
-          "Wesley"
+          "patron"
         ]
       },
       {
         "sceneId": 11,
         "utterances": [
-          "Jonathan"
+          "bartender"
         ]
       }
     ]
@@ -119,7 +119,7 @@
     "voice": {
       "intro": "There are always visitors gathered around the John Harvard Statue. Let's learn more about it.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardstatueUPDATED.mp3",
-      "prompt": "There are so many visitors! Would you like to hear from a Southern family or a family from Long Island?"
+      "prompt": "There are so many visitors! Would you like to hear from the South or a family from Long Island?"
     },
     "options": [
       {
@@ -131,8 +131,9 @@
       {
         "sceneId": 10,
         "utterances": [
-          "Southern",
-          "Southern Family"
+          "South",
+          "Southern Family",
+          "Southern"
         ]
       }
     ]
@@ -155,7 +156,7 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
-      "prompt": ""
+      "prompt": "That's it!"
     },
     "options": []
   },
@@ -238,7 +239,7 @@
     "generateOptions": true,
     "readPreviousOptions": false,
     "card": {
-      "title": "Annie",
+      "title": "Book Options",
       "text": "You enter a room.",
       "prompt": "",
       "image": {
@@ -247,15 +248,23 @@
       }
     },
     "voice": {
-      "intro": "",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
-      "prompt": "Thanks, Annie. Let's hear more about the history of books in Harvard Square. Say continue."
+      "intro": "Would you like to hear from a bookseller or would you like to hear a history of books in Harvard Square?",
+      "mp3file": "",
+      "prompt": ""
     },
     "options": [
       {
         "sceneId": 12,
         "utterances": [
-          "Continue"
+          "history",
+          "history of books",
+          "book history"
+        ]
+      },
+      {
+        "sceneId": 13,
+        "utterances": [
+          "bookseller"
         ]
       }
     ]
@@ -278,7 +287,7 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-wesley.mp3",
-      "prompt": ""
+      "prompt": "That's it!"
     },
     "options": []
   },
@@ -322,7 +331,7 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-southernfamily.mp3",
-      "prompt": ""
+      "prompt": "That's it!"
     },
     "options": []
   },
@@ -366,7 +375,29 @@
     "voice": {
       "intro": "",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardsqandbookstores.mp3",
-      "prompt": ""
+      "prompt": "That's it!"
+    },
+    "options": []
+  },
+  {
+    "id": 13,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Annie",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
+      "prompt": "That's it!"
     },
     "options": []
   }
