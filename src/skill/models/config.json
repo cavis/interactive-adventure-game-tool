@@ -33,6 +33,12 @@
     ],
     "AMAZON.CancelIntent": [
       "exit skill"
+    ],
+    "AMAZON.PauseIntent": [
+      "pause skill"
+    ],
+    "AMAZON.ResumeIntent": [
+      "resume skill"
     ]
   },
   "responses": {

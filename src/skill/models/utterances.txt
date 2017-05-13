@@ -15,12 +15,26 @@ GoBackIntent go back
 AMAZON.HelpIntent help
 AMAZON.StopIntent exit skill
 AMAZON.CancelIntent exit skill
-BeginIntent begin
+AMAZON.PauseIntent pause skill
+AMAZON.ResumeIntent resume skill
 MoreBackgroundIntent more background
 MoreBackgroundIntent background
 MoreBackgroundIntent more
 StayInSquareIntent stay in square
 StayInSquareIntent square
+StayInSquareIntent stay
 GoOnCampusIntent go on campus
-GoOnCampusIntent campus
 GoOnCampusIntent go to campus
+GoOnCampusIntent campus
+GoBackIntent go back
+GoBackIntent back
+MoreBackgroundIntent more background
+MoreBackgroundIntent background
+MoreBackgroundIntent more
+StayInSquareIntent stay in square
+StayInSquareIntent stay
+StayInSquareIntent square
+StatueIntent statue
+StatueIntent go to statue
+StatueIntent look at statue
+StatueIntent let's go

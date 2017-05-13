@@ -28,7 +28,10 @@
       "intent": "AMAZON.CancelIntent"
     },
     {
-      "intent": "BeginIntent"
+      "intent": "AMAZON.PauseIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
     },
     {
       "intent": "MoreBackgroundIntent"
@@ -38,6 +41,9 @@
     },
     {
       "intent": "GoOnCampusIntent"
+    },
+    {
+      "intent": "StatueIntent"
     }
   ]
 }

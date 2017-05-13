@@ -14,16 +14,34 @@
       }
     },
     "voice": {
-      "intro": "Welcome to your podventure!",
-      "mp3file": "",
-      "prompt": "When you are ready, say \"Begin\"."
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/05-99-Percent-Forgotten.mp3",
+      "prompt": "Where to? More background, stay in square, or go to campus?"
     },
     "options": [
       {
         "utterances": [
-          "begin"
+          "more background",
+          "background",
+          "more"
         ],
         "sceneId": 1
+      },
+      {
+        "sceneId": 5,
+        "utterances": [
+          "stay in square",
+          "square",
+          "stay"
+        ]
+      },
+      {
+        "sceneId": 6,
+        "utterances": [
+          "go on campus",
+          "go to campus",
+          "campus"
+        ]
       }
     ]
   },
@@ -33,7 +51,7 @@
     "isHidden": false,
     "readPreviousOptions": false,
     "card": {
-      "title": "Train station",
+      "title": "Background",
       "text": "",
       "prompt": "",
       "image": {
@@ -42,13 +60,65 @@
       }
     },
     "voice": {
-      "intro": "",
-      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-wesley.mp3",
-      "prompt": "none"
+      "intro": "It's never enough, huh.",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
+      "prompt": "That's it."
+    },
+    "options": []
+  },
+  {
+    "id": 2,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Statue",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "What a great statue",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/harvardstatueUPDATED.mp3",
+      "prompt": "We've seen everything here. Would you like to go back, or exit?"
     },
     "options": [
       {
-        "sceneId": 2,
+        "sceneId": 3,
+        "utterances": [
+          "go back",
+          "back"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Back to start",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/05-99-Percent-Forgotten.mp3",
+      "prompt": "Where to? More background, or stay in square?"
+    },
+    "options": [
+      {
+        "sceneId": 4,
         "utterances": [
           "more background",
           "background",
@@ -56,24 +126,17 @@
         ]
       },
       {
-        "sceneId": 3,
+        "sceneId": 7,
         "utterances": [
           "stay in square",
+          "stay",
           "square"
-        ]
-      },
-      {
-        "sceneId": 4,
-        "utterances": [
-          "go on campus",
-          "campus",
-          "go to campus"
         ]
       }
     ]
   },
   {
-    "id": 2,
+    "id": 4,
     "color": "default",
     "isHidden": false,
     "generateOptions": true,
@@ -88,14 +151,14 @@
       }
     },
     "voice": {
-      "intro": "It's never enough for you, huh?",
+      "intro": "It's never enough, huh?",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/cambridge1-jonathan.mp3",
       "prompt": ""
     },
     "options": []
   },
   {
-    "id": 3,
+    "id": 5,
     "color": "default",
     "isHidden": false,
     "generateOptions": true,
@@ -110,14 +173,14 @@
       }
     },
     "voice": {
-      "intro": "Let's go to the square",
+      "intro": "Welcome to Harvard Square",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
-      "prompt": "Goodbye"
+      "prompt": "That's it"
     },
     "options": []
   },
   {
-    "id": 4,
+    "id": 6,
     "color": "default",
     "isHidden": false,
     "generateOptions": true,
@@ -132,8 +195,40 @@
       }
     },
     "voice": {
-      "intro": "Off to campus",
+      "intro": "Time to relive your college days.",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/statue-longislandfamily.mp3",
+      "prompt": "Want to go look at that neat statue?"
+    },
+    "options": [
+      {
+        "sceneId": 2,
+        "utterances": [
+          "statue",
+          "go to statue",
+          "look at statue",
+          "let's go"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Square",
+      "text": "You enter a room.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "You're staying in square",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/ravenbooks-annie.mp3",
       "prompt": ""
     },
     "options": []
