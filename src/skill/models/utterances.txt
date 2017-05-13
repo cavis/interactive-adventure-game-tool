@@ -16,5 +16,6 @@ AMAZON.HelpIntent help
 AMAZON.StopIntent exit skill
 AMAZON.CancelIntent exit skill
 BeginIntent begin
-OpenDoorIntent open door
-CloseDoorIntent close door
+LeftIntent left
+RightIntent right
+FarewellIntent farewell

@@ -31,10 +31,13 @@
       "intent": "BeginIntent"
     },
     {
-      "intent": "OpenDoorIntent"
+      "intent": "LeftIntent"
     },
     {
-      "intent": "CloseDoorIntent"
+      "intent": "RightIntent"
+    },
+    {
+      "intent": "FarewellIntent"
     }
   ]
 }

@@ -34,7 +34,7 @@
     "readPreviousOptions": false,
     "card": {
       "title": "Something here",
-      "text": "You're listening to 99pi okay? <a href=\"prx.org\">prx.org</a>",
+      "text": "You're listening to 99pi okay?",
       "prompt": "",
       "image": {
         "largeImageUrl": null,
@@ -42,21 +42,21 @@
       }
     },
     "voice": {
-      "intro": "Something blah blah blah",
+      "intro": "Going to play a file",
       "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/99short.mp3",
-      "prompt": "ssshhhhhh"
+      "prompt": ""
     },
     "options": [
       {
         "sceneId": 2,
         "utterances": [
-          "open door"
+          "left"
         ]
       },
       {
         "sceneId": 3,
         "utterances": [
-          "close door"
+          "right"
         ]
       }
     ]
@@ -77,14 +77,43 @@
       }
     },
     "voice": {
-      "intro": "You enter a room. What would you like to do?",
+      "intro": "You went left.  Okay.",
+      "mp3file": "https://s3.amazonaws.com/ryan-s3.prx.org/99short.mp3",
+      "prompt": "Say farewell"
+    },
+    "options": [
+      {
+        "sceneId": 4,
+        "utterances": [
+          "farewell"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "color": "default",
+    "isHidden": false,
+    "generateOptions": true,
+    "readPreviousOptions": false,
+    "card": {
+      "title": "Room",
+      "text": "You went right. Bye.",
+      "prompt": "",
+      "image": {
+        "largeImageUrl": null,
+        "smallImageUrl": null
+      }
+    },
+    "voice": {
+      "intro": "You're done here.",
       "mp3file": "",
-      "prompt": ""
+      "prompt": "Goodbye"
     },
     "options": []
   },
   {
-    "id": 3,
+    "id": 4,
     "color": "default",
     "isHidden": false,
     "generateOptions": true,
@@ -99,9 +128,9 @@
       }
     },
     "voice": {
-      "intro": "You're done here.",
+      "intro": "That's it. Bye.",
       "mp3file": "",
-      "prompt": "Goodbye"
+      "prompt": ""
     },
     "options": []
   }

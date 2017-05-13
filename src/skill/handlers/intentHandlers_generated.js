@@ -28,10 +28,13 @@ module.exports = {
 	"BeginIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "begin" )
 	},
-	"OpenDoorIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "open door" )
+	"LeftIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "left" )
 	},
-	"CloseDoorIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "close door" )
+	"RightIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "right" )
+	},
+	"FarewellIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "farewell" )
 	},
 }

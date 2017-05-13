@@ -2,6 +2,7 @@
 
 var utils = require('./utils')
 var respond = require('./respond')
+var dynamo = require('./dynamoDB')
 
 var defaultIntentHandlers = {
 
@@ -107,12 +108,27 @@ var defaultIntentHandlers = {
   },
 
   "AMAZON.PauseIntent": function ( intent, session, request, response ) {
-    console.log('pause!!!')
+    console.log('PauseIntent', JSON.stringify(session));
+    var exit = utils.findResponseByType('pause')
+    respond.exitWithCard( exit, session, response )
   },
 
-
   "AMAZON.ResumeIntent": function ( intent, session, request, response ) {
+    console.log('ResumeIntent', JSON.stringify(session));
     console.log('resume!!!')
+  },
+
+  "AMAZON.NextIntent": function ( intent, session, request, response ) {
+    if ( !session.attributes.currentSceneId ) {
+      dynamo.getUserState( session, function ( data ) {
+        console.log('restoring state', JSON.stringify(data))
+        session.attributes = {};
+        Object.assign( session.attributes, data.item )
+        defaultIntentHandlers["RepeatOptionsIntent"](intent, session, request, response);
+      });
+    } else {
+      defaultIntentHandlers["RepeatOptionsIntent"](intent, session, request, response);
+    }
   }
 
 }

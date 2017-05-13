@@ -71,6 +71,12 @@ function buildResponse ( scene ){
       ssml: `<speak>${scene.voice.intro.trim()}<break time="200ms"/>${voicePrompt}</speak>`
     };
   }
+  else {
+    speech = {
+      type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
+      ssml: `<speak>${voicePrompt}</speak>`
+    };
+  }
 
   return {
 
