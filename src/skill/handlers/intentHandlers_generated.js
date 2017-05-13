@@ -25,8 +25,11 @@ module.exports = {
 	"AMAZON.CancelIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "exit skill" )
 	},
-	"BeginIntent": function ( intent, session, request, response ) {
-		processUtterance( intent, session, request, response, "begin" )
+	"AMAZON.PauseIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "pause skill" )
+	},
+	"AMAZON.ResumeIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "resume skill" )
 	},
 	"MoreBackgroundIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "more background" )
@@ -36,5 +39,8 @@ module.exports = {
 	},
 	"GoOnCampusIntent": function ( intent, session, request, response ) {
 		processUtterance( intent, session, request, response, "go on campus" )
+	},
+	"StatueIntent": function ( intent, session, request, response ) {
+		processUtterance( intent, session, request, response, "statue" )
 	},
 }

@@ -112,6 +112,14 @@ var defaultIntentHandlers = {
     response.stop()
   },
 
+  "AMAZON.PreviousIntent": function ( intent, session, request, response ) {
+    dynamo.getUserState( session, function ( data ) {
+      session.attributes = {};
+      Object.assign( session.attributes, data.item )
+      defaultIntentHandlers["GoBackIntent"]( intent, session, request, response )
+    });
+  },
+
   "AMAZON.ResumeIntent": function ( intent, session, request, response ) {
     if ( !session.attributes.currentSceneId ) {
       dynamo.getUserState( session, function ( data ) {

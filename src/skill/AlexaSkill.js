@@ -150,7 +150,7 @@ Response.prototype = (function () {
       }))
     },
     tellWithCard: function ( speechOutput, audioOutput, cardTitle, cardContent, cardImage ) {
-      this._context.succeed( buildSpeechletResponse({
+      var resp = buildSpeechletResponse({
         session: this._session,
         output: speechOutput,
         audio: audioOutput,
@@ -158,7 +158,10 @@ Response.prototype = (function () {
         cardContent: cardContent,
         cardImage: cardImage,
         shouldEndSession: true
-      }))
+      })
+      resp.directives = resp.directives || [];
+      resp.directives.push({type: "AudioPlayer.Stop"});
+      this._context.succeed(resp);
     },
     ask: function ( speechOutput, audioOutput, repromptSpeech ) {
       this._context.succeed( buildSpeechletResponse({
