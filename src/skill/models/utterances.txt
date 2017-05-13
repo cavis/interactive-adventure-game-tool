@@ -27,6 +27,7 @@ GoOnCampusIntent go on campus
 GoOnCampusIntent go to campus
 GoOnCampusIntent campus
 StatueIntent statue
+StatueIntent yes
 StatueIntent go to statue
 StatueIntent look at statue
 StatueIntent let's go
