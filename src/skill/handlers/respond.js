@@ -7,10 +7,8 @@ module.exports = {
 
   readSceneWithCard: function ( scene, session, response ) {
     var json = buildResponse( scene )
-    console.log("JSON", json );
-    dynamo.putUserState( session, function ( data ) {
-      console.log( data.message )
 
+    dynamo.putUserState( session, function ( data ) {
       response.askWithCard(
         json.speechOutput,
         json.audioOutput,
@@ -22,12 +20,22 @@ module.exports = {
     })
   },
 
+  promptSceneWithCard: function ( scene, session, response ) {
+    var json = buildResponsePrompt( scene )
+
+    dynamo.putUserState( session, function ( data ) {
+      response.ask(
+        json.speechOutput,
+        json.audioOutput,
+        json.repromptOutput
+      )
+    })
+  },
+
   exitWithCard: function ( scene, session, response ) {
     var json = buildResponse( scene )
-    console.log("JSON", json);
-    dynamo.putUserState( session, function ( data ) {
-      console.log( data.message )
 
+    dynamo.putUserState( session, function ( data ) {
       response.tellWithCard(
         json.speechOutput,
         json.audioOutput,
@@ -45,16 +53,30 @@ function buildResponse ( scene ){
   var voicePrompt = scene.voice.prompt.trim() || buildPrompt( scene, true )
   var cardPrompt  = scene.card.prompt.trim()  || buildPrompt( scene, false )
 
-  var speech = {
-    type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
-    ssml: '<speak>' + scene.voice.intro.trim() + '<break time="200ms"/>' + voicePrompt + '</speak>'
+  var speech = null;
+  var audio = null;
+
+  if (scene.voice.mp3file) {
+    audio = scene.voice.mp3file.trim();
+    if (scene.voice.intro) {
+      speech = {
+        type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
+        ssml: `<speak>${scene.voice.intro.trim()}</speak>`
+      }
+    }
+  }
+  else if (scene.voice.intro && scene.voice.intro.trim()) {
+    speech = {
+      type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
+      ssml: `<speak>${scene.voice.intro.trim()}<break time="200ms"/>${voicePrompt}</speak>`
+    };
   }
 
   return {
 
-    // initial text spoken by Alexa
+    // initial text/audio spoken by Alexa
     speechOutput: speech,
-    audioOutput: (scene.voice.mp3file || '').trim(),
+    audioOutput: audio,
 
     // reprompt is played if there's 7 seconds of silence
     repromptOutput: {
@@ -74,6 +96,21 @@ function buildResponse ( scene ){
 
   }
 
+}
+
+function buildResponsePrompt ( scene ){
+  console.log('buildResponsePrompt', JSON.stringify(scene))
+  var voicePrompt = scene.voice.prompt.trim() || buildPrompt( scene, true )
+  return {
+    speechOutput: {
+      type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
+      ssml: `<speak>${voicePrompt}</speak>`
+    },
+    repromptOutput: {
+      type: AlexaSkill.SPEECH_OUTPUT_TYPE.SSML,
+      ssml: `<speak>I'm Sorry.<break time="200ms"/>${voicePrompt}</speak>`
+    }
+  }
 }
 
 function buildPrompt ( scene, isForSpeech ) {

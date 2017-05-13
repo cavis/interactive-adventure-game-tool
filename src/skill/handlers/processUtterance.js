@@ -40,6 +40,7 @@ function processUtterance ( intent, session, request, response, utterance ) {
     var nextScene = utils.findNextScene( currentScene, option );
     session.attributes.breadcrumbs.push( currentScene.id )
     session.attributes.currentSceneId = nextScene.id
+    console.log('setSceneId', JSON.stringify(session));
     respond.readSceneWithCard( nextScene, session, response )
   }
 

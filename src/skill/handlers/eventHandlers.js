@@ -14,9 +14,9 @@ var eventHandlers = {
   },
 
   onLaunch: function ( request, session, response ) {
-
     dynamo.getUserState( session, function ( data ) {
-      if ( data.item && data.item.breadcrumbs.length ) {
+      console.log('getUserState', JSON.stringify(data));
+      if ( false && data.item && data.item.breadcrumbs.length ) {
         Object.assign( session.attributes, data.item )
         session.attributes.isAskingToRestoreState = true
         var scene = utils.findResponseByType('askToRestoreState')
@@ -29,6 +29,15 @@ var eventHandlers = {
       }
     })
 
+  },
+
+  onAudioFinish: function ( request, session, response ) {
+    dynamo.getUserState( session, function ( data ) {
+      session.attributes = {};
+      Object.assign( session.attributes, data.item )
+      var scene = utils.findResponseBySceneId( session.attributes.currentSceneId )
+      respond.promptSceneWithCard( scene, session, response )
+    });
   },
 
   onIntent: function ( request, session, response ) {

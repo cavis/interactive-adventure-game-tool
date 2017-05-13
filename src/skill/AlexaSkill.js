@@ -29,23 +29,29 @@ AlexaSkill.prototype.requestHandlers = {
   },
 
   'AudioPlayer.PlaybackStarted': function ( event, context, response ) {
-
+    console.log('EVENT me playbackstarted', JSON.stringify(event.context));
+    context.succeed({version: '1.0', response: {shouldEndSession: true}});
   },
 
   'AudioPlayer.PlaybackFinished': function ( event, context, response ) {
-
+    console.log('EVENT me PlaybackFinished', JSON.stringify(event.context));
+    context.succeed({version: '1.0', response: {shouldEndSession: true}});
+    // this.eventHandlers.onAudioFinish.call( this, event.request, event.context.System, response)
   },
 
   'AudioPlayer.PlaybackStopped': function ( event, context, response ) {
-
+    console.log('EVENT me playbackstopped', JSON.stringify(event.context));
+    context.succeed({version: '1.0', response: {shouldEndSession: true}});
   },
 
   'AudioPlayer.PlaybackNearlyFinished': function ( event, context, response ) {
-
+    console.log('EVENT me playbacknearlyfinished', JSON.stringify(event.context));
+    context.succeed({version: '1.0', response: {shouldEndSession: true}});
   },
 
   'AudioPlayer.PlaybackFailed': function ( event, context, response ) {
-
+    console.log('EVENT me playbackfailed', JSON.stringify(event.context));
+    context.succeed({version: '1.0', response: {shouldEndSession: true}});
   },
 
   SessionEndedRequest: function ( event, context ) {
@@ -73,6 +79,8 @@ AlexaSkill.prototype.eventHandlers = {
         }
     },
 
+    onAudioFinish: function ( request, session, response ) {},
+
     onSessionEnded: function ( sessionEndedRequest, session ) {}
 };
 
@@ -87,19 +95,26 @@ AlexaSkill.prototype.execute = function ( event, context ) {
             + this._appId)
         throw "Invalid applicationId"
     }
-    if (!event.session.attributes) {
-        event.session.attributes = {}
-    }
+
+    event.session = event.session || {};
+    event.session.attributes = event.session.attributes || {};
     if (event.session.new) {
         this.eventHandlers.onSessionStarted(event.request, event.session)
     }
 
     // Route the request to the proper handler which may have been overriden.
+    var type = event.request.type;
+    var json = JSON.stringify(event.request);
+    console.log(`HANDLE[${type}]`, JSON.stringify(event.session));
     var requestHandler = this.requestHandlers[ event.request.type ]
-    requestHandler.call( this, event, context, new Response( context, event.session ))
+    if (requestHandler) {
+      requestHandler.call( this, event, context, new Response( context, event.session ))
+    } else {
+      throw new Error(`Unhandled ${type} request: ${json}`);
+    }
 
   } catch ( e ) {
-    console.log("Unexpected exception " + e )
+    console.error("Unexpected exception " + e )
     context.fail( e )
   }
 }
@@ -111,7 +126,6 @@ var Response = function ( context, session ) {
 
 function createSpeechObject( optionsParam ) {
   if (optionsParam && optionsParam.type === 'SSML') {
-    console.log( optionsParam )
     return {
       type: optionsParam.type,
       ssml: optionsParam.ssml
@@ -182,10 +196,7 @@ Response.prototype = (function () {
 
   function buildSpeechletResponse ( options ) {
 
-    var alexaResponse = {
-      outputSpeech: createSpeechObject( options.output ),
-      shouldEndSession: options.shouldEndSession
-    }
+    var alexaResponse = {shouldEndSession: options.shouldEndSession};
 
     if ( options.reprompt ) {
       alexaResponse.reprompt = {
@@ -203,18 +214,21 @@ Response.prototype = (function () {
         alexaResponse.card.image = options.cardImage
       }
     }
-    if ( options.audio ) {
+
+    // at least one of output/audio MUST be set
+    if (options.output) {
+      alexaResponse.outputSpeech = createSpeechObject(options.output);
+    }
+    if (options.audio) {
       alexaResponse.directives = [{
-        type: "AudioPlayer.Play",
-        playBehavior: "REPLACE_ALL",
-        audioItem: {
-          stream: {
-            url: options.audio,
-            token: "0", // Unique token for the track - needed when queueing multiple tracks
-            expectedPreviousToken: null, // The expected previous token - when using queues, ensures safety
-            offsetInMilliseconds: 0
-          }
-        }
+        type: 'AudioPlayer.Play',
+        playBehavior: 'REPLACE_ALL',
+        audioItem: { stream: {
+          url: options.audio,
+          token: 'current-audio',
+          expectedPreviousToken: null,
+          offsetInMilliseconds: 0
+        }}
       }];
       alexaResponse.shouldEndSession = true; // MUST be true
     }
@@ -227,7 +241,7 @@ Response.prototype = (function () {
     if ( options.session && options.session.attributes ) {
       returnResult.sessionAttributes = options.session.attributes
     }
-
+    console.log('skillResponse:', JSON.stringify(returnResult));
     return returnResult
   }
 
